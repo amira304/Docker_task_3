@@ -1,0 +1,123 @@
+PS C:\Users\CRIZMA MEGA STORE\Desktop\nodejs project\NodeJS-ExpressJS-main> npm install nodemon --save-dev
+
+up to date, audited 121 packages in 2s
+
+21 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+PS C:\Users\CRIZMA MEGA STORE\Desktop\nodejs project\NodeJS-ExpressJS-main> docker-compose build
+time="2025-12-18T23:39:11+02:00" level=warning msg="C:\\Users\\CRIZMA MEGA STORE\\Desktop\\nodejs project\\NodeJS-ExpressJS-main\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] Building 14.0s (12/12) FINISHED
+ => [internal] load local bake definitions                                                                                                      0.0s
+ => => reading from stdin 622B                                                                                                                  0.0s
+ => [internal] load build definition from Dockerfile                                                                                            0.0s
+ => => transferring dockerfile: 169B                                                                                                            0.0s 
+ => [internal] load metadata for docker.io/library/node:18                                                                                      1.7s 
+ => [internal] load .dockerignore                                                                                                               0.0s
+ => => transferring context: 2B                                                                                                                 0.0s 
+ => [internal] load build context                                                                                                               5.7s 
+ => => transferring context: 15.84MB                                                                                                            5.7s 
+ => [1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783                                0.1s 
+ => => resolve docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783                                0.1s 
+ => CACHED [2/5] WORKDIR /app                                                                                                                   0.0s
+ => CACHED [3/5] COPY package*.json ./                                                                                                          0.0s 
+ => CACHED [4/5] RUN npm install                                                                                                                0.0s 
+ => [5/5] COPY . .                                                                                                                              2.2s 
+ => exporting to image                                                                                                                          3.6s 
+ => => exporting layers                                                                                                                         1.8s 
+ => => exporting manifest sha256:a9633cd90183c660ff50b613e5efcd71f13b1279a01398d4455f40d83dea4f58                                               0.0s 
+ => => exporting config sha256:572daa1ec5159a4de11e153fc0a9453cf4141682da54b873e0358a7eaff483ba                                                 0.0s 
+ => => exporting attestation manifest sha256:49159de1a5d44beb3b3e73a281276a114ff248957ad53eee48af1a5989a11780                                   0.1s 
+ => => exporting manifest list sha256:04b3ddd8dffe5f65e6ea8b0f412a36fea8a8dbdea418ad2f895352c058430943                                          0.0s 
+ => => naming to docker.io/library/nodejs-expressjs-main-app:latest                                                                             0.0s 
+ => => unpacking to docker.io/library/nodejs-expressjs-main-app:latest                                                                          1.5s 
+ => resolving provenance for metadata file                                                                                                      0.0s 
+[+] Building 1/1
+ ✔ nodejs-expressjs-main-app  Built          0.0s 
+PS C:\Users\CRIZMA MEGA STORE\Desktop\nodejs project\NodeJS-ExpressJS-main> docker-compose up
+time="2025-12-18T23:39:47+02:00" level=warning msg="C:\\Users\\CRIZMA MEGA STORE\\Desktop\\nodejs project\\NodeJS-ExpressJS-main\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+[+] Running 2/2
+ ✔ Container mongo_db  Running          0.0s 
+ ✔ Container node_app  Recreated          1.8s 
+Attaching to mongo_db, node_app
+node_app  |
+node_app  | > sectionone@1.0.0 dev
+node_app  | > nodemon app.js                                                                                                                         
+node_app  |                                                                                                                                          
+node_app  | [nodemon] 3.1.11
+node_app  | [nodemon] to restart at any time, enter `rs`
+node_app  | [nodemon] watching path(s): *.*                                                                                                          
+node_app  | [nodemon] watching extensions: js,mjs,cjs,json
+node_app  | [nodemon] starting `node app.js`                                                                                                         
+mongo_db  | {"t":{"$date":"2025-12-18T21:39:59.002+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1766093999,"ts_usec":2141,"thread":"1:0x7a10c9a3a640","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","category_id":6,"verbose_level":"DEBUG","verbose_level_id":1,"msg":"saving checkpoint snapshot min: 134, snapshot max: 134 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}
+
+node_app  | Connection error: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017, connect ECONNREFUSED 127.0.0.1:27017
+node_app  |     at _handleConnectionErrors (/app/node_modules/mongoose/lib/connection.js:1165:11)
+node_app  |     at NativeConnection.openUri (/app/node_modules/mongoose/lib/connection.js:1096:11) {                                                 
+node_app  |   errorLabelSet: Set(0) {},                                                                                                              
+node_app  |   reason: TopologyDescription {                                                                                                          
+node_app  |     type: 'Unknown',                                                                                                                     
+node_app  |     servers: Map(1) { 'localhost:27017' => [ServerDescription] },                                                                        
+node_app  |     stale: false,
+node_app  |     compatible: true,                                                                                                                    
+node_app  |     heartbeatFrequencyMS: 10000,
+node_app  |     localThresholdMS: 15,                                                                                                                
+node_app  |     setName: null,                                                                                                                       
+node_app  |     maxElectionId: null,
+node_app  |     maxSetVersion: null,                                                                                                                 
+node_app  |     commonWireVersion: 0,                                                                                                                
+node_app  |     logicalSessionTimeoutMinutes: null
+node_app  |   },                                                                                                                                     
+node_app  |   code: undefined,                                                                                                                       
+node_app  |   cause: TopologyDescription {
+node_app  |     type: 'Unknown',                                                                                                                     
+node_app  |     servers: Map(1) { 'localhost:27017' => [ServerDescription] },                                                                        
+node_app  |     stale: false,
+node_app  |     compatible: true,                                                                                                                    
+node_app  |     heartbeatFrequencyMS: 10000,                                                                                                         
+node_app  |     localThresholdMS: 15,
+node_app  |     setName: null,                                                                                                                       
+node_app  |     maxElectionId: null,                                                                                                                 
+node_app  |     localThresholdMS: 15,
+node_app  |     setName: null,
+node_app  |     maxElectionId: null,
+node_app  |     maxSetVersion: null,
+node_app  |     commonWireVersion: 0,
+node_app  |     commonWireVersion: 0,
+node_app  |     logicalSessionTimeoutMinutes: null
+node_app  |   }
+node_app  | }
+node_app  | [nodemon] clean exit - waiting for changes before restart
+mongo_db  | {"t":{"$date":"2025-12-18T21:40:59.038+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1766094059,"ts_usec":38385,"thread":"1:0x7a10c9a3a640","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","category_id":6,"verbose_level":"DEBUG","verbose_level_id":1,"msg":"saving checkpoint snapshot min: 136, snapshot max: 136 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}  
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:34.716+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.18.0.1:34916","uuid":"c58ffbad-3bc6-485d-890c-b72c44741be9","connectionId":4,"connectionCount":1}}    
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:34.721+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn4","msg":"client metadata","attr":{"remote":"172.18.0.1:34916","client":"conn4","negotiatedCompressors":[],"doc":{"driver":{"name":"nodejs|Mongoose","version":"6.20.0|8.19.1"},"platform":"Node.js v24.11.0, LE","os":{"name":"win32","architecture":"x64","version":"10.0.26100","type":"Windows_NT"}}}}
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:34.751+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.18.0.1:34920","uuid":"7ce60796-b3b0-45a8-841b-411058625271","connectionId":5,"connectionCount":2}}    
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:34.751+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn5","msg":"client metadata","attr":{"remote":"172.18.0.1:34920","client":"conn5","negotiatedCompressors":[],"doc":{"driver":{"name":"nodejs|Mongoose","version":"6.20.0|8.19.1"},"platform":"Node.js v24.11.0, LE","os":{"name":"win32","architecture":"x64","version":"10.0.26100","type":"Windows_NT"}}}}
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:45.259+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.18.0.1:45922","uuid":"0b9a689c-1016-48cb-a73d-9c628ed877dd","connectionId":6,"connectionCount":3}}    
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:45.260+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn6","msg":"client metadata","attr":{"remote":"172.18.0.1:45922","client":"conn6","negotiatedCompressors":[],"doc":{"driver":{"name":"nodejs|Mongoose","version":"6.20.0|8.19.1"},"platform":"Node.js v24.11.0, LE","os":{"name":"win32","architecture":"x64","version":"10.0.26100","type":"Windows_NT"}}}}
+mongo_db  | {"t":{"$date":"2025-12-18T21:41:59.071+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1766094119,"ts_usec":71913,"thread":"1:0x7a10c9a3a640","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","category_id":6,"verbose_level":"DEBUG","verbose_level_id":1,"msg":"saving checkpoint snapshot min: 138, snapshot max: 138 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}  
+mongo_db  | {"t":{"$date":"2025-12-18T21:42:59.173+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1766094179,"ts_usec":173751,"thread":"1:0x7a10c9a3a640","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","category_id":6,"verbose_level":"DEBUG","verbose_level_id":1,"msg":"saving checkpoint snapshot min: 140, snapshot max: 140 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}} 
+
+
+v View in Docker Desktop   o View Config   w Enable Watch
+
+
+
+PS C:\Users\CRIZMA MEGA STORE\Desktop\nodejs project\NodeJS-ExpressJS-main> docker ps
+PS C:\Users\CRIZMA MEGA STORE\Desktop\nodejs project\NodeJS-ExpressJS-main> docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                             NAMES
+d7072b3e726e   nodejs-expressjs-main-app   "docker-entrypoint.s…"   48 seconds ago   Up 46 seconds   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp       node_app
+6bd960caf838   mongo:6                     "docker-entrypoint.s…"   46 minutes ago   Up 46 minutes   0.0.0.0:27017->27017/tcp, [::]:27017->27017/tcp   mongo_db
+PS C:\Users\CRIZMA MEGA STORE\Desktop\nodejs project\NodeJS-ExpressJS-main> npm start
+
+> sectionone@1.0.0 start
+> node app.js
+
+Connected to MongoDB locally
+http://localhost:3000/
